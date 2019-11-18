@@ -1,0 +1,15 @@
+string float_to_hex(float a)
+{  
+	string float_to_hex;
+	char* b =(char*) &a;
+	string hex_val;
+	char f;
+	for(f=3;f>=0;f--){
+		hex_val=right(hex(b[f]&0xFF),2);
+		if (left(hex_val,1)=="h") {
+			hex_val="0"+right(hex_val,1);
+		}
+		float_to_hex += hex_val;
+	}
+	return float_to_hex; 
+}

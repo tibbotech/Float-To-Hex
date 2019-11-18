@@ -1,0 +1,10 @@
+declare function float_to_hex(a as float) as string
+dim float_value as float = 0.0
+
+sub on_sys_timer()
+
+	dim hex_value as string = float_to_hex(float_value)
+	sys.debugprint("Float Value:\t" + ftostr(float_value,FTOSTR_MODE_AUTO,5) + "\tHex Value:\t" + hex_value + "\r\n")
+	float_value = float_value + 0.01
+	
+end sub
